@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BETWORLD 2026 — Apuestas Mundial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header__logo">
+      <span class="logo-icon">⚽</span>
+      <span class="logo-name">BET<span class="logo-accent">WORLD</span></span>
+      <span class="logo-year">2026</span>
+    </div>
+    <nav class="header__nav" id="filterNav">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="grupo">Grupos</button>
+      <button class="filter-btn" data-filter="octavos">Octavos</button>
+      <button class="filter-btn" data-filter="cuartos">Cuartos</button>
+      <button class="filter-btn" data-filter="semis">Semis</button>
+      <button class="filter-btn" data-filter="final">Final</button>
+    </nav>
+    <div class="header__right">
+      <div class="saldo-box" id="saldoBox">
+        <span class="saldo-label">SALDO</span>
+        <span class="saldo-valor" id="saldoValor">$500.000</span>
+      </div>
+      <button class="btn-carrito" id="btnCarrito">
+        🎫 Boleto <span class="carrito-badge" id="carritoBadge">0</span>
+      </button>
+      <button class="btn-historial" id="btnHistorial">📋 Historial</button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__label">MUNDIAL 2026 · USA · CANADA · MEXICO</p>
+      <h1 class="hero__title">APUESTA<br/><em>AL MEJOR</em></h1>
+      <p class="hero__sub">Saldo virtual · Cuotas en tiempo real · Historial completo</p>
+    </div>
+    <div class="hero__bg" aria-hidden="true">2026</div>
+  </section>
+
+  <!-- ===== BARRA BÚSQUEDA ===== -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" class="search-input"
+      placeholder="🔍 Busca equipo o partido…" autocomplete="off"/>
+    <span class="search-count" id="searchCount"></span>
+  </div>
+
+  <!-- ===== CATÁLOGO ===== -->
+  <main class="catalog" id="catalog"></main>
+
+  <!-- ===== PANEL BOLETO ===== -->
+  <aside class="panel carrito-panel" id="carritoPanel" aria-label="Boleto de apuestas">
+    <div class="panel__header">
+      <h2>🎫 Mi Boleto</h2>
+      <button class="panel__close" id="carritoClose">✕</button>
+    </div>
+    <div class="carrito-items" id="carritoItems"></div>
+    <div class="panel__footer">
+      <div class="total-row">
+        <span>TOTAL APOSTADO</span>
+        <strong id="carritoTotal">$0</strong>
+      </div>
+      <button class="btn-confirmar" id="btnConfirmar">¡ CONFIRMAR APUESTA !</button>
+      <button class="btn-vaciar" id="btnVaciar">Vaciar boleto</button>
+    </div>
+  </aside>
+
+  <!-- ===== PANEL HISTORIAL ===== -->
+  <aside class="panel historial-panel" id="historialPanel" aria-label="Historial">
+    <div class="panel__header">
+      <h2>📋 Historial</h2>
+      <button class="panel__close" id="historialClose">✕</button>
+    </div>
+    <div class="historial-filtros" id="historialFiltros">
+      <button class="hfiltro active" data-estado="todos">Todos</button>
+      <button class="hfiltro" data-estado="pendiente">Pendientes</button>
+      <button class="hfiltro" data-estado="ganada">Ganadas</button>
+      <button class="hfiltro" data-estado="perdida">Perdidas</button>
+    </div>
+    <div class="historial-items" id="historialItems"></div>
+  </aside>
+
+  <!-- ===== OVERLAY ===== -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal" id="modal">
+    <div class="modal__box">
+      <div class="modal__icon" id="modalIcon">🏆</div>
+      <h2 id="modalTitulo">¡Apuesta confirmada!</h2>
+      <p id="modalMsg"></p>
+      <button class="btn-confirmar" id="modalClose">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Scripts en orden de dependencia -->
+  <script src="data/data.js"></script>
+  <script src="classes/Partido.js"></script>
+  <script src="classes/Apuesta.js"></script>
+  <script src="classes/Usuario.js"></script>
+  <script src="classes/SistemaApuestas.js"></script>
+  <script src="ui/PartidoCard.js"></script>
+  <script src="ui/CarritoUI.js"></script>
+  <script src="ui/HistorialUI.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
