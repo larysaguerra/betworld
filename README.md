@@ -3,6 +3,13 @@
 Aplicación web de apuestas para el Mundial 2026.  
 Desarrollada con HTML, CSS y JavaScript Vanilla puro (sin frameworks).
 
+## Integrantes
+- Andres Serna
+- Larysa Guerra
+- Maria Estrada
+- Juliana Patiño
+- Valentina Corredor
+
 ## Cómo usar
 
 1. Descomprime el ZIP
