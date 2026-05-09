@@ -26,6 +26,12 @@
       <button class="filter-btn" data-filter="final">Final</button>
     </nav>
     <div class="header__right">
+      <div class="user-panel">
+        <span class="user-greeting" id="userGreeting">Invitado</span>
+        <button class="btn-auth" id="btnLogin">Iniciar sesión</button>
+        <button class="btn-auth" id="btnRegister">Registrarse</button>
+        <button class="btn-logout" id="btnLogout" hidden>Cerrar sesión</button>
+      </div>
       <div class="saldo-box" id="saldoBox">
         <span class="saldo-label">SALDO</span>
         <span class="saldo-valor" id="saldoValor">$500.000</span>
@@ -99,6 +105,43 @@
       <h2 id="modalTitulo">¡Apuesta confirmada!</h2>
       <p id="modalMsg"></p>
       <button class="btn-confirmar" id="modalClose">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- ===== MODAL AUTENTICACIÓN ===== -->
+  <div class="modal auth-modal" id="authModal" aria-hidden="true">
+    <div class="auth-modal__box">
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="authTabLogin" data-tab="login">Iniciar sesión</button>
+        <button class="auth-tab" id="authTabRegister" data-tab="register">Registrarse</button>
+      </div>
+      <h2 id="authTitle">Inicia sesión en BETWORLD</h2>
+      <p class="auth-subtitle" id="authSubtitle">Accede con tu usuario y contraseña para apostar en el Mundial 2026.</p>
+      <div class="auth-forms">
+        <form class="auth-form auth-form--login active" id="loginForm">
+          <label>Usuario
+            <input type="text" id="loginUsuario" placeholder="Tu usuario" required />
+          </label>
+          <label>Contraseña
+            <input type="password" id="loginPassword" placeholder="Tu contraseña" required />
+          </label>
+          <button type="submit" class="btn-confirmar">Entrar</button>
+        </form>
+        <form class="auth-form auth-form--register" id="registerForm">
+          <label>Usuario
+            <input type="text" id="registerUsuario" placeholder="Tu usuario" required />
+          </label>
+          <label>Contraseña
+            <input type="password" id="registerPassword" placeholder="Crea una contraseña" required />
+          </label>
+          <label>Confirmar
+            <input type="password" id="registerPasswordConfirm" placeholder="Repite la contraseña" required />
+          </label>
+          <button type="submit" class="btn-confirmar">Crear cuenta</button>
+        </form>
+      </div>
+      <p class="auth-message" id="authMessage"></p>
+      <button class="btn-confirmar" id="authClose">Cerrar</button>
     </div>
   </div>
 

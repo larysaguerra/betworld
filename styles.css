@@ -53,6 +53,24 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); mi
 
 .header__right { display: flex; align-items: center; gap: .6rem; }
 
+.user-panel {
+  display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+}
+.user-greeting {
+  color: var(--muted); font-size: .82rem;
+}
+.btn-auth, .btn-logout {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text); border-radius: 50px; cursor: pointer;
+  padding: .42rem .85rem; font-size: .78rem; transition: var(--tr);
+}
+.btn-auth:hover, .btn-logout:hover {
+  border-color: var(--neon); color: var(--neon);
+}
+.btn-logout {
+  background: var(--red); color: #fff; border-color: var(--red);
+}
+
 .saldo-box {
   display: flex; flex-direction: column; align-items: flex-end;
   line-height: 1.1;
@@ -382,6 +400,35 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); mi
 .modal__box h2 { font-family: var(--font-h); font-size: 1.9rem; color: var(--gold); margin-bottom: .5rem; }
 .modal__box p  { color: var(--muted); font-size: .9rem; margin-bottom: 1.4rem; line-height: 1.6; }
 .modal__box .btn-confirmar { max-width: 180px; margin: 0 auto; font-size: 1rem; }
+
+.auth-modal .auth-modal__box {
+  max-width: 420px; width: 100%; padding: 2rem;
+}
+
+.auth-tabs {
+  display: flex; gap: .5rem; margin-bottom: 1rem;
+}
+.auth-tab {
+  flex: 1; background: var(--surface2); border: 1px solid var(--border);
+  color: var(--text); border-radius: 999px; padding: .75rem 1rem;
+  cursor: pointer; transition: var(--tr); font-size: .86rem;
+}
+.auth-tab.active {
+  background: var(--neon); color: var(--bg); border-color: var(--neon);
+}
+.auth-form { display: none; text-align: left; }
+.auth-form.active { display: block; }
+.auth-form label {
+  display: block; margin-bottom: .9rem; font-size: .85rem; color: var(--muted);
+}
+.auth-form input {
+  width: 100%; background: var(--bg); border: 1px solid var(--border);
+  color: var(--text); border-radius: 12px; padding: .75rem 1rem;
+  margin-top: .35rem;
+}
+.auth-message {
+  min-height: 1.3rem; margin-top: 1rem; color: var(--red); font-size: .86rem;
+}
 
 /* ── EMPTY / NO RESULTS ─────────── */
 .no-results {

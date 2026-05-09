@@ -70,6 +70,9 @@ class SistemaApuestas {
    * @returns {{ ok: boolean, mensaje: string }}
    */
   agregarAlBoleto(partido, tipo, monto) {
+    if (this.usuarioActivo.id === 'guest') {
+      return { ok: false, mensaje: 'Debes iniciar sesión para apostar.' };
+    }
     if (!partido.estaDisponible()) {
       return { ok: false, mensaje: 'Este partido no acepta apuestas.' };
     }
@@ -107,6 +110,9 @@ class SistemaApuestas {
    * @returns {{ ok: boolean, mensaje: string, totalApostado: number }}
    */
   confirmarBoleto() {
+    if (this.usuarioActivo.id === 'guest') {
+      return { ok: false, mensaje: 'Debes iniciar sesión para confirmar tu boleto.' };
+    }
     if (this.apuestas.length === 0) {
       return { ok: false, mensaje: 'El boleto está vacío.' };
     }

@@ -6,6 +6,15 @@
  */
 class Usuario {
   /**
+   * Crea un usuario desde datos guardados.
+   * @param {{id:string,nombre:string,saldo:number}} data
+   * @returns {Usuario}
+   */
+  static fromData(data) {
+    return new Usuario(data.id, data.nombre, data.saldo ?? 500000);
+  }
+
+  /**
    * @param {string} id
    * @param {string} nombre
    * @param {number} saldoInicial
